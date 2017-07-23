@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/mobile-version?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/mobile-version?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/mobile-version" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/mobile-version</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/mobile-version?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/mobile-version" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/join?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/join?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/join" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/join</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/join?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/join" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/sign-in?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/sign-in?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/sign-in" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/sign-in</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/sign-in?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/sign-in" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/forgot-password?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/forgot-password?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/forgot-password" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+        <loc>http://localhost/eceshub/forgot-password</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/forgot-password?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/forgot-password" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/latest?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/latest?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/latest" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/latest</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/latest?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/latest" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/featured?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/featured?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/featured" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/featured</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/featured?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/featured" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/online?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/online?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/online" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/online</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/online?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/online" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/search?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/search?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/search" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/users/search</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/users/search?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/users/search" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/user/mahyargigi?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/user/mahyargigi?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/user/mahyargigi" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/user/mahyargigi</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/user/mahyargigi?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/user/mahyargigi" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/latest?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/latest?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/latest" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/latest</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/latest?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/latest" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/toprated?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/toprated?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/toprated" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/toprated</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/toprated?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/toprated" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/most_discussed?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/most_discussed?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/most_discussed" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/most_discussed</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/most_discussed?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/most_discussed" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/tagged?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/tagged?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/tagged" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/photo/viewlist/tagged</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/photo/viewlist/tagged?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/photo/viewlist/tagged" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video/viewlist/latest?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video/viewlist/latest?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video/viewlist/latest" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video/viewlist/latest</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video/viewlist/latest?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video/viewlist/latest" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video/viewlist/toprated?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video/viewlist/toprated?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video/viewlist/toprated" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video/viewlist/toprated</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video/viewlist/toprated?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video/viewlist/toprated" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video/viewlist/tagged?language_id=1</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video/viewlist/tagged?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video/viewlist/tagged" />
+        
+    </url>
+    <url>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+        <loc>http://localhost/eceshub/video/viewlist/tagged</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://localhost/eceshub/video/viewlist/tagged?language_id=1" />
+                <xhtml:link rel="alternate" hreflang="fa-IR" href="http://localhost/eceshub/video/viewlist/tagged" />
+        
+    </url>
+
+</urlset>
