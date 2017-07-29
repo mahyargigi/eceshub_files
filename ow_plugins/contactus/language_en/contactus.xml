@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prefix name="contactus" label="Contact Us" language_tag="en" language_label="English">
+
+    <key name="index_page_title">
+        <value>تماس با ما</value>
+    </key>
+    <key name="index_page_heading">
+        <value>تماس با ما</value>
+    </key>
+    <key name="bottom_menu_item">
+        <value>تماس با ما</value>
+    </key>
+    <key name="form_label_to">
+        <value>به</value>
+    </key>
+    <key name="form_label_from">
+        <value>از</value>
+    </key>
+    <key name="form_label_subject">
+        <value>موضوع</value>
+    </key>
+    <key name="form_label_message">
+        <value>پیغام</value>
+    </key>
+    <key name="form_label_captcha">
+        <value>کپچا</value>
+    </key>
+    <key name="form_label_submit">
+        <value>ارسال</value>
+    </key>
+    <key name="message_sent">
+        <value>پیام شما با موفقیت ارسال شد.{$dept} به زودی پاسخ شما را خواهد داد. با تشکر.</value>
+    </key>
+
+</prefix>
