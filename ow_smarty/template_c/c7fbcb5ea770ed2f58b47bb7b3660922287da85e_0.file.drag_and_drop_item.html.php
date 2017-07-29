@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-07-20 06:59:09
+/* Smarty version 3.1.31, created on 2017-07-26 05:52:44
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\drag_and_drop_item.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5970b72d91b030_83650921',
+  'unifunc' => 'content_5978909c88b819_76424150',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5970b72d91b030_83650921 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5978909c88b819_76424150 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_block_block_decorator')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\block.block_decorator.php';
 ?>
 <div class="ow_dnd_widget <?php echo $_smarty_tpl->tpl_vars['box']->value['uniqName'];?>

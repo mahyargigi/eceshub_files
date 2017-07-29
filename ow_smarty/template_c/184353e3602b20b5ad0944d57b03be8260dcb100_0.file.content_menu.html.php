@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-07-22 00:33:56
+/* Smarty version 3.1.31, created on 2017-07-26 06:48:22
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\content_menu.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5972ffe42a8086_25692005',
+  'unifunc' => 'content_59789da68fcd31_85007382',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5972ffe42a8086_25692005 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59789da68fcd31_85007382 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="ow_content_menu_wrap">
 <ul class="ow_content_menu clearfix">

@@ -47,6 +47,11 @@ class EVENT_BOL_EventDao extends OW_BaseDao
     const WHO_CAN_VIEW = 'whoCanView';
     const WHO_CAN_INVITE = 'whoCanInvite';
     const STATUS = 'status';
+    /*
+     * my code
+     */
+    const EMAIL = 'email';
+
 
     const VALUE_WHO_CAN_INVITE_CREATOR = 1;
     const VALUE_WHO_CAN_INVITE_PARTICIPANT = 2;

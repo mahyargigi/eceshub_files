@@ -773,4 +773,9 @@
 		بازگشت
 		</value>
     </key>
+	<key name="event_email">
+        <value>
+		ایمیل
+		</value>
+    </key>
 </prefix>

@@ -1687,6 +1687,16 @@ class EventAddForm extends Form
 
         $this->addElement($location);
 
+        /*my code for adding email field
+        */
+        $fieldEmail = new TextField('email');
+        $fieldEmail->setRequired();
+        $fieldEmail->addValidator(new EmailValidator());
+        $fieldEmail->setLabel($language->text('event', 'event_email'));
+//        $fieldEmail->setHasInvitation(true);
+        $this->addElement($fieldEmail);
+
+
         $whoCanView = new RadioField('who_can_view');
         $whoCanView->setRequired();
         $whoCanView->addOptions(

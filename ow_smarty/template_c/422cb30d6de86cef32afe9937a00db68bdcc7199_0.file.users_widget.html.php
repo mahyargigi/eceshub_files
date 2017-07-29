@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-07-22 00:34:06
+/* Smarty version 3.1.31, created on 2017-07-29 00:39:13
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\users_widget.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5972ffee26a100_44836925',
+  'unifunc' => 'content_597c3ba19374a5_94543084',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5972ffee26a100_44836925 (Smarty_Internal_Template $_smarty_tpl) {
+function content_597c3ba19374a5_94543084 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_decorator')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.decorator.php';
 if (!empty($_smarty_tpl->tpl_vars['menu']->value)) {
 echo $_smarty_tpl->tpl_vars['menu']->value;
