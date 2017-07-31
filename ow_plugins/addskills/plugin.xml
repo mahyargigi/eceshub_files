@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <name>افزودن قابلیت ها</name>
+    <key>addskills</key>
+    <description>با نصب این پلاگین تمام قابلیت ها در دیتابیس وارد خواهد شد</description>
+    <author>shub</author>
+    <authorEmail>plugins@shub.ir</authorEmail>
+    <authorUrl>http://www.shub.ir</authorUrl>
+    <developerKey>your_developer_key_here</developerKey>
+    <build>1</build>
+    <copyright>(C) 2009 Skalfa LLC. All rights reserved.</copyright>
+    <license>The License</license>
+    <licenseUrl>http://www.shub.ir/licenses/bsd-license.php</licenseUrl>
+</plugin>

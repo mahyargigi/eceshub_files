@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prefix name="addskills" label="Add Skills" language_tag="en" language_label="English">
+
+    <key name="add_title">
+        <value>اضافه کردن قابلیت ها</value>
+    </key>
+    <key name="add_heading">
+        <value>اضافه کردن قابلیت ها</value>
+    </key>
+    <key name="upload_file_field">
+        <value>فایل را در این فیلد آپلود کنید</value>
+    </key>
+    <key name="form_add_skills_submit">
+        <value>ارسال فایل</value>
+    </key>
+</prefix>

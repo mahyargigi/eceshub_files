@@ -42,6 +42,13 @@ class CONTACTUS_BOL_DepartmentDao extends OW_BaseDao
         return 'CONTACTUS_BOL_Department';
     }
 
+//    public function getCusto(){
+//        $wx = new OW_Example();
+//        $wx->andFieldBetween('' , '');
+//        $ret = $this->findIdByExample($wx);
+//        return $ret;
+//    }
+
     /**
      * @see OW_BaseDao::getTableName()
      *

@@ -7,6 +7,7 @@ class CONTACTUS_BOL_Service
      * @var CONTACTUS_BOL_Service
      */
     private static $classInstance;
+    private $departmentDao;
 
     /**
      * Returns an instance of class (singleton pattern implementation).
@@ -24,7 +25,7 @@ class CONTACTUS_BOL_Service
 
     private function __construct()
     {
-
+        $departmentDao = CONTACTUS_BOL_DepartmentDao::getInstance();
     }
 
     public function getDepartmentLabel($id)
