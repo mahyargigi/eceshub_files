@@ -7,6 +7,7 @@
  */
 class ADDSKILLS_BOL_SkillsDao extends OW_BaseDao
 {
+    private static $classInstance;
     protected function __construct()
     {
         parent::__construct();
@@ -28,8 +29,18 @@ class ADDSKILLS_BOL_SkillsDao extends OW_BaseDao
     {
         return OW_DB_PREFIX . 'addskills_skills';
     }
-    public function suggestSkill($str){
-        $exmp = new OW_Example();
-        $exmp->andFieldLike($str);
+//    public function suggestSkill($str){
+//        $exmp = new OW_Example();
+//        $exmp->andFieldLike($str);
+//    }
+    public function addSkill($name)
+    {
+        $skill = new ADDSKILLS_BOL_Skills();
+        $skill->name = $name;
+        ADDSKILLS_BOL_SkillsDao::getInstance()->save($skill);
+        return $skill;
+    }
+    public function getAllSkills(){
+        return $this->findAll();
     }
 }

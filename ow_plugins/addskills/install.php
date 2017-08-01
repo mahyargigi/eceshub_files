@@ -3,13 +3,14 @@
 //$path = OW::getPluginManager()->getPlugin('addskills')->getRootDir() . 'langs.zip';
 OW::getLanguage()->importPluginLangs(OW::getPluginManager()->getPlugin('addskills')->getRootDir() . 'langs.zip', 'addskills');
 //OW::getLanguage()->importPluginLangs(OW::getPluginManager()->getPlugin('addskills')->getRootDir() . 'langs.zip', 'addskills');
-//$sql = "CREATE TABLE `" . OW_DB_PREFIX . "addskills_skills` (
-//    `id` INT(11) NOT NULL AUTO_INCREMENT,
-//    `name` VARCHAR(200) NOT NULL,
-//    PRIMARY KEY (`id`)
-//)
-//ENGINE=MyISAM
-//ROW_FORMAT=DEFAULT";
+$sql = "CREATE TABLE `" . OW_DB_PREFIX . "addskills_skills` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(200) NOT NULL,
+    PRIMARY KEY (`id`)
+)
+ENGINE=MyISAM
+ROW_FORMAT=DEFAULT";
+OW::getDbo()->query($sql);
 //$line = fopen("allLinkedSkills.txt" , "r");
 //$line = file("allLinkedSkills.txt");
 //foreach ($line as $value){

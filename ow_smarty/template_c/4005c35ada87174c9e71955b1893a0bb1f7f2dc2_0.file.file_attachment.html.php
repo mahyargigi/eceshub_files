@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-07-31 09:29:13
+/* Smarty version 3.1.31, created on 2017-08-01 08:33:55
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\file_attachment.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_597f5ad9017de3_43043266',
+  'unifunc' => 'content_59809f632c12c3_58012473',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_597f5ad9017de3_43043266 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59809f632c12c3_58012473 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 ?>
 <div id="<?php echo $_smarty_tpl->tpl_vars['data']->value['uid'];?>

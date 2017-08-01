@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <name>آگهی مشاغل</name>
+    <key>jobads</key>
+    <description>با این پلاگین می توانید برای استخدام افراد آگهی بدهید</description>
+    <author>shub</author>
+    <authorEmail>plugins@shub.ir</authorEmail>
+    <authorUrl>http://www.shub.ir</authorUrl>
+    <developerKey>your_developer_key_here</developerKey>
+    <build>1</build>
+    <copyright>(C) 2009 Skalfa LLC. All rights reserved.</copyright>
+    <license>The License</license>
+    <licenseUrl>http://www.shub.ir/licenses/bsd-license.php</licenseUrl>
+</plugin>

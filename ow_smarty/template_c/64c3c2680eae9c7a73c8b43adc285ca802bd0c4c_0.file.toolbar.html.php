@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-07-31 09:29:12
+/* Smarty version 3.1.31, created on 2017-08-01 08:33:55
   from "C:\xampp\htdocs\eceshub\ow_plugins\mailbox\views\components\toolbar.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_597f5ad8bb0a85_79577222',
+  'unifunc' => 'content_59809f630f9c19_90871593',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_597f5ad8bb0a85_79577222 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59809f630f9c19_90871593 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_component')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.component.php';
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 if ($_smarty_tpl->tpl_vars['chatModeEnabled']->value) {

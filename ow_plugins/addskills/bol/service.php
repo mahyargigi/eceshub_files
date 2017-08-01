@@ -19,12 +19,11 @@ class ADDSKILLS_BOL_Service{
 
     private function __construct()
     {
-        $departmentDao = ADDSKILLS_BOL_SkillsDao::getInstance();
     }
+
     public function addSkill($name)
     {
-        $skill = new ADDSKILLS_BOL_Skills();
-        $skill->name = $name;
-        ADDSKILLS_BOL_SkillsDao::getInstance()->save($skill);
+        return ADDSKILLS_BOL_SkillsDao::getInstance()->addSkill($name);
     }
+
 }

@@ -38,9 +38,6 @@
  */
 class EVENT_BOL_Event extends OW_Entity
 {
-    /* my code
-    */
-    public $email;
     /**
      * @var string
      */
