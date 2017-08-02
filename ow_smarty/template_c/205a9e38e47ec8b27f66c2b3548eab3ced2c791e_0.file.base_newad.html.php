@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-02 01:13:06
+/* Smarty version 3.1.31, created on 2017-08-02 07:38:04
   from "C:\xampp\htdocs\eceshub\ow_plugins\jobads\views\controllers\base_newad.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59818992d49a01_49975394',
+  'unifunc' => 'content_5981e3cc9e6f07_20268915',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '205a9e38e47ec8b27f66c2b3548eab3ced2c791e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\eceshub\\ow_plugins\\jobads\\views\\controllers\\base_newad.html',
-      1 => 1501661585,
+      1 => 1501684518,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59818992d49a01_49975394 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5981e3cc9e6f07_20268915 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_block_form')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\block.form.php';
 if (!is_callable('smarty_function_label')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.label.php';
 if (!is_callable('smarty_function_input')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.input.php';
@@ -50,7 +50,13 @@ ob_start();
         <td class="ow_label"><?php echo smarty_function_label(array('name'=>'skills'),$_smarty_tpl);?>
 </td>
         <td class="ow_value"><?php echo smarty_function_input(array('name'=>'skills'),$_smarty_tpl);?>
-</td>
+
+        <br>
+        <div class="needed_skills">
+            <?php echo smarty_function_input(array('name'=>'chosen_skills'),$_smarty_tpl);?>
+
+        </div>
+        </td>
     </tr>
     <tr class="ow_alt1">
         <td class="ow_label"><?php echo smarty_function_label(array('name'=>'email'),$_smarty_tpl);?>
@@ -59,7 +65,7 @@ ob_start();
  <?php echo smarty_function_error(array('name'=>'email'),$_smarty_tpl);?>
 </td>
     </tr>
-    <tr class="ow_alt1">
+    <tr>
         <td class="ow_center" colspan="2"><?php echo smarty_function_submit(array('name'=>'send','class'=>'ow_button '),$_smarty_tpl);?>
 </td>
     </tr>

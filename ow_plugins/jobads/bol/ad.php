@@ -5,7 +5,7 @@ class JOBADS_BOL_Ad extends OW_Entity{
 
     public $description;
 
-    public $skills = array();
+    public $skills ;
 
     public $email;
 

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-02 01:13:08
+/* Smarty version 3.1.31, created on 2017-08-02 07:38:05
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\decorators\floatbox.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_598189941c7a06_48433158',
+  'unifunc' => 'content_5981e3cdd94884_64613024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_598189941c7a06_48433158 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5981e3cdd94884_64613024 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 ?>
 

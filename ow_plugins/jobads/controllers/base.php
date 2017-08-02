@@ -29,6 +29,7 @@ class JOBADS_CTRL_Base extends OW_ActionController{
         }
 
         OW::getDocument()->addScript(OW::getPluginManager()->getPlugin("jobads")->getStaticJsUrl() . 'newad.js');
+
         $form->addElement($skills);
 
         $email = new TextField('email');
@@ -41,6 +42,16 @@ class JOBADS_CTRL_Base extends OW_ActionController{
         $submit->setValue(OW::getLanguage()->text('jobads', 'form_label_submit'));
         $form->addElement($submit);
 
+        $skills = new HiddenField('chosen_skills');
+        $form->addElement($skills);
+
         $this ->addForm($form);
+        if ( OW::getRequest()->isPost() ){
+            if ( $form->isValid($_POST) ){
+                $values = $form->getValues();
+                exit($values['chosen_skills']);
+                json_encode($skills);
+            }
+        }
     }
 }
