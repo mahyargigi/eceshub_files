@@ -12,9 +12,10 @@ class JOBADS_CTRL_Base extends OW_ActionController{
 
         $img = new FileField('image');
         $img->setLabel(OW::getLanguage()->text('jobads','ad_image'));
+        $img->setRequired();
         $form->addElement($img);
 
-        $dsc = new TextField('description');
+        $dsc = new WysiwygTextarea('description');
         $dsc->setLabel(OW::getLanguage()->text('jobads' , 'ad_description'));
         $dsc->setRequired();
         $form->addElement($dsc);
@@ -26,7 +27,20 @@ class JOBADS_CTRL_Base extends OW_ActionController{
         foreach ($allSkills as $skill){
             $skills->addOption($skill->name, $skill->name);
         }
+
+        OW::getDocument()->addScript(OW::getPluginManager()->getPlugin("jobads")->getStaticJsUrl() . 'newad.js');
         $form->addElement($skills);
+
+        $email = new TextField('email');
+        $email->setLabel(OW::getLanguage()->text('jobads' , 'ad_email'));
+        $email->setRequired();
+        $email->addValidator(new EmailValidator());
+        $form->addElement($email);
+
+        $submit = new Submit('send');
+        $submit->setValue(OW::getLanguage()->text('jobads', 'form_label_submit'));
+        $form->addElement($submit);
+
         $this ->addForm($form);
     }
 }

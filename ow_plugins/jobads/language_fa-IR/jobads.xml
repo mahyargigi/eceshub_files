@@ -22,5 +22,14 @@
     <key name="ad_description">
         <value>توضیحات</value>
     </key>
+    <key name="ad_skills">
+        <value>افزودن قابلیت ها</value>
+    </key>
+    <key name="ad_email">
+        <value>ایمیل</value>
+    </key>
+    <key name="form_label_submit">
+        <value>ارسال</value>
+    </key>
 
 </prefix>
