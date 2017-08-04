@@ -9,6 +9,24 @@ class JOBADS_BOL_Ad extends OW_Entity{
 
     public $email;
 
+    public $userid;
+
+    /**
+     * @return mixed
+     */
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+
+    /**
+     * @param mixed $userid
+     */
+    public function setUserid($userid)
+    {
+        $this->userid = $userid;
+    }
+
     /**
      * @return mixed
      */

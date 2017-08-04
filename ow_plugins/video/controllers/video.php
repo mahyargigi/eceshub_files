@@ -87,7 +87,7 @@ class VIDEO_CTRL_Video extends OW_ActionController
      */
     private function getMenu()
     {
-        $validLists = array('featured', 'latest', 'toprated', 'tagged');
+        $validLists = array('newad', 'latest', 'toprated', 'tagged');
         $classes = array('ow_ic_push_pin', 'ow_ic_clock', 'ow_ic_star', 'ow_ic_tag');
 
         if ( !VIDEO_BOL_ClipService::getInstance()->findClipsCount('featured') )

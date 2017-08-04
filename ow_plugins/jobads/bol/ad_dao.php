@@ -24,18 +24,32 @@ class JOBADS_BOL_AdDao extends OW_BaseDao{
     {
         return OW_DB_PREFIX . 'jobads_ad';
     }
-    public function addAd($image , $description , $skills , $email)
+    public function addAd($image , $description , $skills , $email , $userid)
     {
         $advertise = new JOBADS_BOL_Ad();
-        $advertise->image = $image;
         $advertise->description = $description;
         $advertise->skills = $skills;
         $advertise->email = $email;
+        $advertise->userid = $userid;
+
+        $pluginfilesDir = OW::getPluginManager()->getPlugin('jobads')->getUserFilesDir();
+        $tmpImgPath = $pluginfilesDir.uniqid().'.jpg';
+//        $tmpImage = new UTIL_Image($image);
+//        $tmpImage->saveImage($tmpImgPath);
+        $advertise->image = $tmpImgPath;
+//        $advertise->image = $image;
+//        $tmpImgPath = $pluginfilesDir.uniqid().'.jpg';
+//        $tmpImage = new UTIL_Image($image);
+//        $tmpImage->copyImage($tmpImgPath);
+        $advertise->image = $tmpImgPath;
 
         JOBADS_BOL_AdDao::getInstance()->save($advertise);
         return $advertise;
     }
     public function getAllAds(){
         return $this->findAll();
+    }
+    public function getAd($id){
+        return $this->findById($id);
     }
 }

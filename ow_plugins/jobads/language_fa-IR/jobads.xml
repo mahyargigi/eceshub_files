@@ -31,5 +31,14 @@
     <key name="form_label_submit">
         <value>ارسال</value>
     </key>
+    <key name="menu_newad">
+        <value>افزودن آگهی جدید</value>
+    </key>
+    <key name="menu_latest">
+        <value>آخرین آگهی ها</value>
+    </key>
+    <key name="menu_yourads">
+        <value>آگهی های شما</value>
+    </key>
 
 </prefix>
