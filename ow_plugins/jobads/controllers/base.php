@@ -13,16 +13,53 @@ class JOBADS_CTRL_Base extends OW_ActionController{
     }
 
     public function index(){
-        $this->setPageTitle(OW::getLanguage()->text('jobads', 'index_page_title'));
-        $this->setPageHeading(OW::getLanguage()->text('jobads', 'index_page_heading'));
-        $tmpmenu = $this->getMenu();
-        $tmpmenu->getElement('newad')->setActive(true);
-//        $tmpmenu->getElement('latest')->setActive(true);
-//        $tmpmenu->getElement('yourads')->setActive(true);
-        $this->addComponent('menu' , $tmpmenu) ;
+//        if(OW::getUser()->isAuthenticated()) {
+            $this->setPageTitle(OW::getLanguage()->text('jobads', 'index_page_title'));
+            $this->setPageHeading(OW::getLanguage()->text('jobads', 'index_page_heading'));
+            $tmpmenu = $this->getMenu();
+//            $tmpmenu->getElement('newad')->setActive(true);
+            $this->addComponent('menu', $tmpmenu);
+
+            $allAds = JOBADS_BOL_AdDao::getInstance()->getAllAds();
+            $count = count($allAds);
+            foreach ($allAds as $ad) {
+                $ad->description = substr($ad->description, 0, 100) . "....";
+                $ad->skills = json_decode($ad->skills);
+                $ad->isOwner = true;
+                if (OW::getUser()->getId() == $ad->userid) {
+                    $ad->isOwner = true;
+                } else {
+                    $ad->isOwner = false;
+                }
+            }
+            $this->assign('allAds', $allAds);
+            $this->assign('count', $count);
+//        }
+//        else{
+//            exit("you are not logged in!");
+//        }
     }
     public function yourads(){
-        exit("nothing yet!");
+        if(OW::getUser()->isAuthenticated()){
+            $this->setPageTitle("آگهی های شما");
+            $this->setPageHeading("آگهی های شما");
+            $tmpmenu = $this->getMenu();
+            $tmpmenu->getElement('yourads')->setActive(true);
+            $this->addComponent('menu' , $tmpmenu) ;
+
+            $allAds = JOBADS_BOL_AdDao::getInstance()->getAdByUserId(OW::getUser()->getId());
+            $count = count($allAds);
+            foreach ($allAds as $ad){
+                $ad->description = substr($ad->description,0 ,100)."....";
+                $ad->skills = json_decode($ad->skills);
+            }
+            $this->assign('allAds' , $allAds);
+            $this->assign('count' , $count);
+        }
+        else{
+            throw new AuthenticateException();
+        }
+
     }
     private function getMenu(){
         $validLists = array('newad', 'latest', 'yourads');
@@ -32,6 +69,8 @@ class JOBADS_CTRL_Base extends OW_ActionController{
         if(!OW::getUser()->isAuthenticated()){
             array_shift($validLists);
             array_shift($classes);
+            array_pop($validLists);
+            array_pop($classes);
         }
         $order = 0;
         foreach ($validLists as $type){
@@ -44,7 +83,7 @@ class JOBADS_CTRL_Base extends OW_ActionController{
                 $item->setUrl(OW::getRouter()->urlForRoute('jobads'));
             }
             else if($type == 'yourads'){
-                $item->setUrl(OW::getRouter()->urlForRoute('jobads'));
+                $item->setUrl(OW::getRouter()->urlForRoute('yourads'));
             }
             else{
                 exit($type);
@@ -64,7 +103,6 @@ class JOBADS_CTRL_Base extends OW_ActionController{
 //        }
 
         $menu = new BASE_CMP_ContentMenu($menuItems);
-
         return $menu;
 
     }
@@ -121,12 +159,12 @@ class JOBADS_CTRL_Base extends OW_ActionController{
                     $chosen_skills = json_encode($chosen_skills);
 //                    exit(gettype($image_element));
                     JOBADS_BOL_AdDao::getInstance()->addAd($image_element , $values['description'] , $chosen_skills , $values['email'] , $userId);
-//                    $this->redirectToAction('index');
+                    $this->redirect('jobads');
                 }
             }
         }
         else{
-            exit("you can not add a new job ad!");
+            throw new AuthenticateException();
         }
     }
     public function showad($params){

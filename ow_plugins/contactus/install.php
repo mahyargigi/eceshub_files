@@ -10,3 +10,4 @@ ROW_FORMAT=DEFAULT";
 
 OW::getDbo()->query($sql);
 OW::getPluginManager()->addPluginSettingsRouteName('contactus', 'contactus.admin');
+

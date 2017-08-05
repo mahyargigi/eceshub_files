@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-04 05:39:08
+/* Smarty version 3.1.31, created on 2017-08-05 03:27:36
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\controllers\base_document_page404.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59846aeccfb4c0_99118214',
+  'unifunc' => 'content_59859d98eb4185_42810580',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59846aeccfb4c0_99118214 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59859d98eb4185_42810580 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 if (!empty($_smarty_tpl->tpl_vars['base404RedirectMessage']->value)) {
 echo $_smarty_tpl->tpl_vars['base404RedirectMessage']->value;

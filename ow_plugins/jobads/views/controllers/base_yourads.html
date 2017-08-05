@@ -1,0 +1,110 @@
+{style}
+.ad-div{
+display: inline-block;
+width: 30%;
+border: solid;
+border-radius: 5px;
+border-color: #899191;
+border-width: 2px;
+}
+.right-ad-div{
+margin-left: 10%;
+margin-right: 5%;
+}
+.ad-image{
+width: 100%;
+height: 100px;
+}
+.skills-div{
+display:inline-block;
+padding-right:10px;
+padding-left: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background-color: #54bfdd;
+color: white;
+margin-left: 3%;
+margin-right: 3%;
+margin-bottom: 3%;
+margin-top: 2%;
+border-radius: 5px;
+}
+.right-margin{
+margin-right: 3%;
+margin-top: 2%;
+}
+.more-info{
+float: left;
+margin-left: 5%;
+margin-bottom: 1%;
+border-radius: 5px;
+background-color:#77c59a;
+color: white;
+padding:2%;
+}
+.delete-ad{
+float: left;
+margin-bottom: 1%;
+margin-left:2%;
+border-radius: 5px;
+background-color: #ee256d;
+color: white;
+padding:2%;
+padding-right: 3%;
+padding=left: 3%;
+}
+{/style}
+{$menu}
+{if $count==0}
+<h2>شما تا الآن آگهی ثبت نکرده اید</h2>
+{else}
+
+    {for $i=0 ; $i< $count ; $i++}
+    {if $i%2==0}
+
+    <div class="ad-div right-ad-div">
+        <img src="http://localhost/eceshub/ow_userfiles/plugins/jobads/girls-1000.png" class="ad-image">
+        <label class="right-margin">{$allAds[$i]->description}</label>
+        <br>
+        <br>
+        <label class="right-margin">توانایی ها:</label>
+        <br>
+        {foreach from=$allAds[$i]->skills item="item"}
+        <div class="skills-div">
+            {$item}</div>
+        {/foreach}
+        <br>
+        <a href="#">
+            <div class="delete-ad">حذف</div>
+        </a>
+        <a href="http://localhost/eceshub/jobads/ad/{$allAds[$i]->id}">
+            <div class="more-info">اطلاعات بیشتر</div>
+        </a>
+    </div>
+    {else}
+    <div class="ad-div">
+        <img src="http://localhost/eceshub/ow_userfiles/plugins/jobads/girls-1000.png" class="ad-image">
+        <label class="right-margin">{$allAds[$i]->description}</label>
+        <br>
+        <br>
+        <label class="right-margin">توانایی ها:</label>
+        <br>
+        {foreach from=$allAds[$i]->skills item="item"}
+        <div class="skills-div">
+            {$item}</div>
+        {/foreach}
+        <br>
+        <a href="#">
+            <div class="delete-ad">حذف</div>
+        </a>
+        <a href="http://localhost/eceshub/jobads/ad/{$allAds[$i]->id}">
+            <div class="more-info">اطلاعات بیشتر</div>
+        </a>
+    </div>
+    </a>
+    <br>
+    <br>
+    <br>
+    {/if}
+    {/for}
+{/if}

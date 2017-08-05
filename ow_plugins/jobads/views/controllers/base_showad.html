@@ -1,3 +1,16 @@
+{style}
+.skills-div{
+display:inline-block;
+padding-right:10px;
+padding-left: 10px;
+padding-bottom: 5px;
+padding-top: 5px;
+background-color: #54bfdd;
+color: white;
+margin-left: 10px;
+border-radius: 5px;
+}
+{/style}
 <div class="ow_right">
     <img src="{$info.image}" >
     <br>
@@ -9,7 +22,7 @@
     <h2>توانایی های مورد نیاز:</h2>
     <br>
     {foreach from=$info.skills item="item"}
-        <div style="display:inline-block;padding-right:10px;padding-left: 10px;padding-bottom: 5px;padding-top: 5px; background-color: #54bfdd;color: white;margin-left: 10px;border-radius: 5px;">
+        <div class="skills-div">
             {$item}</div>
     {/foreach}
 </div>

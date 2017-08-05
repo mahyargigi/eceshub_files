@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-04 05:40:18
+/* Smarty version 3.1.31, created on 2017-08-05 01:07:05
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\decorators\box.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59846b323e78a8_23537324',
+  'unifunc' => 'content_59857ca99c6408_83800922',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59846b323e78a8_23537324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59857ca99c6408_83800922 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_decorator')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.decorator.php';
 if ($_smarty_tpl->tpl_vars['data']->value['capEnabled']) {?>
 <div class="ow_box_cap<?php echo $_smarty_tpl->tpl_vars['data']->value['capAddClass'];?>

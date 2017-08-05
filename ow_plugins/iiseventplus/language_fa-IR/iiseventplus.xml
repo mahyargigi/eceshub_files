@@ -2,7 +2,7 @@
 <prefix name="iiseventplus" label="iiseventplus" language_tag="fa-IR" language_label="فارسی">
     <key name="event_general">
         <value>
-            رویدادهای عمومی
+رویدادهای IT
         </value>
     </key>
     <key name="event_my">
@@ -82,12 +82,12 @@
     </key>
 	<key name="event_general_heading">
         <value>
-			رویدادهای عمومی
+            رویدادهای IT
         </value>
     </key>
 	<key name="event_general_events_page_title">
         <value>
-			رویدادهای عمومی
+            رویدادهای IT
         </value>
     </key>
 	<key name="event_my_heading">

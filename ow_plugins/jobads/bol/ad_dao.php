@@ -49,7 +49,18 @@ class JOBADS_BOL_AdDao extends OW_BaseDao{
     public function getAllAds(){
         return $this->findAll();
     }
+    public function getAdByUserId($userId){
+        $allAds = $this->getAllAds();
+        $result = array();
+        foreach($allAds as $ad){
+            if($ad->userid == $userId){
+                array_push($result , $ad);
+            }
+        }
+        return $result;
+    }
     public function getAd($id){
         return $this->findById($id);
     }
+
 }
