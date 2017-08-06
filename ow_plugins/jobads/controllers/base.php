@@ -110,10 +110,11 @@ class JOBADS_CTRL_Base extends OW_ActionController{
     {
         if (OW::getUser()->isAuthenticated()){
             $userId = OW::getUser()->getId();
-
+//enctype
             $this->setPageTitle(OW::getLanguage()->text('jobads', 'add_ad_title'));
             $this->setPageHeading(OW::getLanguage()->text('jobads', 'add_ad_heading'));
             $form = new Form('ad_form');
+//            $form->setEnctype(Form::ENCTYPE_MULTYPART_FORMDATA);
 
             $img = new FileField('image');
             $img->setLabel(OW::getLanguage()->text('jobads', 'ad_image'));
@@ -153,6 +154,16 @@ class JOBADS_CTRL_Base extends OW_ActionController{
             $this->addForm($form);
             if (OW::getRequest()->isPost()) {
                 if ($form->isValid($_POST)) {
+//                    exit("helloooo");
+//                    echo print_r($_FILES);
+//                    $tmpPhotoService = PHOTO_BOL_PhotoTemporaryService::getInstance();
+
+                    $photoFile = $_FILES['photo'];
+//                    exit("jerrrrrr");
+//                    $tmpPhotoId = PHOTO_BOL_PhotoTemporaryService::getInstance()->addTemporaryPhoto($photoFile);
+                    exit("jeree");
+//                    exit((string)$tmpPhotoId);
+
                     $values = $form->getValues();
                     $image_element = $form->getElement('image');
                     $chosen_skills = explode(',', $values['chosen_skills']);
@@ -166,6 +177,17 @@ class JOBADS_CTRL_Base extends OW_ActionController{
         else{
             throw new AuthenticateException();
         }
+    }
+    public function deletead($params){
+        $ad = JOBADS_BOL_AdDao::getInstance()->getAd($params['adId']);
+        if(OW::getUser()->isAuthenticated()){
+            $userId = OW::getUser()->getId();
+            if($ad->userid == $userId){
+                JOBADS_BOL_AdDao::getInstance()->deleteAd($params['adId']);
+                $this->redirect('jobads');
+            }
+        }
+
     }
     public function showad($params){
         $this->setPageTitle("آگهی مشاغل");

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 03:51:39
+/* Smarty version 3.1.31, created on 2017-08-06 05:48:08
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\decorators\avatar_item.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5985a33b10d0e3_68129945',
+  'unifunc' => 'content_598710088bbb79_46782246',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5985a33b10d0e3_68129945 (Smarty_Internal_Template $_smarty_tpl) {
+function content_598710088bbb79_46782246 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div class="ow_avatar<?php if (!empty($_smarty_tpl->tpl_vars['data']->value['class'])) {?> <?php echo $_smarty_tpl->tpl_vars['data']->value['class'];

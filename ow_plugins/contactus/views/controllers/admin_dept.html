@@ -1,7 +1,7 @@
 <table class="ow_table_1 ow_automargin" style="width: 400px;">
     {foreach from=$contacts item=contact}
     <tr class="{cycle values='ow_alt1,ow_alt2'}">
-        <td width="1"><a href="{$deleteUrls[$contact.name]}" onclick="return confirm('{text key="base+are_you_sure"}');" style="width:16px; height:16px; display:block; margin:0 auto;background-repeat:no-repeat;background-position: 50% 50%;" class="ow_ic_delete"></a></td>
+         <td width="1"><a href="{$deleteUrls[$contact.name]}" onclick="return confirm('{text key="base+are_you_sure"}');" style="width:16px; height:16px; display:block; margin:0 auto;background-repeat:no-repeat;background-position: 50% 50%;" class="ow_ic_delete"></a></td>
         <td>{$contact.email}</td>
         <td>{$contact.label}</td>
     </tr>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 03:51:41
+/* Smarty version 3.1.31, created on 2017-08-06 05:52:50
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\context_action.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5985a33dee90e2_32879283',
+  'unifunc' => 'content_59871122bcd6d2_93327474',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5985a33dee90e2_32879283 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59871122bcd6d2_93327474 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_block_block_decorator')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\block.block_decorator.php';
 ?>
 <div class="ow_context_action_block clearfix <?php if (!empty($_smarty_tpl->tpl_vars['class']->value)) {

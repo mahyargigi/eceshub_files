@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 03:51:40
+/* Smarty version 3.1.31, created on 2017-08-06 05:48:09
   from "C:\xampp\htdocs\eceshub\ow_plugins\event\views\components\upcoming_events.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5985a33c2bc6d9_98519034',
+  'unifunc' => 'content_598710091c3d47_23383164',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5985a33c2bc6d9_98519034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_598710091c3d47_23383164 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_decorator')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.decorator.php';
 if (empty($_smarty_tpl->tpl_vars['events']->value)) {?>
 <div class="ow_nocontent"><?php echo $_smarty_tpl->tpl_vars['no_content_message']->value;?>

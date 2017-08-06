@@ -3,3 +3,4 @@ OW::getRouter()->addRoute(new OW_Route('jobads', 'jobads', "JOBADS_CTRL_Base", '
 OW::getRouter()->addRoute(new OW_Route('yourads', 'jobads/yourads', "JOBADS_CTRL_Base", 'yourads'));
 OW::getRouter()->addRoute(new OW_Route('jobads_newad', 'jobads/newad', "JOBADS_CTRL_Base", 'newad'));
 OW::getRouter()->addRoute(new OW_Route('jobads_showad', 'jobads/ad/:adId', "JOBADS_CTRL_Base", 'showad'));
+OW::getRouter()->addRoute(new OW_Route('jobads_deletead', 'jobads/deletead/:adId', "JOBADS_CTRL_Base", 'deletead'));

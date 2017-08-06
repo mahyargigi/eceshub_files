@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 03:24:04
+/* Smarty version 3.1.31, created on 2017-08-06 05:50:15
   from "C:\xampp\htdocs\eceshub\ow_themes\iissocialcity\master_pages\blank.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59859cc47df570_53657054',
+  'unifunc' => 'content_59871087d5d3c7_38208783',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59859cc47df570_53657054 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59871087d5d3c7_38208783 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 if (!is_callable('smarty_function_decorator')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.decorator.php';
 ?>

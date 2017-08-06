@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 01:06:57
+/* Smarty version 3.1.31, created on 2017-08-06 05:42:49
   from "C:\xampp\htdocs\eceshub\ow_plugins\jobads\views\controllers\base_index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59857ca10ea890_03028612',
+  'unifunc' => 'content_59870ec97605a1_60603411',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '485a35e97002f9d183638855fa298aba32528a66' => 
     array (
       0 => 'C:\\xampp\\htdocs\\eceshub\\ow_plugins\\jobads\\views\\controllers\\base_index.html',
-      1 => 1501916585,
+      1 => 1502023291,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59857ca10ea890_03028612 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59870ec97605a1_60603411 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_block_style')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\block.style.php';
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('style', array());
 $_block_repeat=true;
@@ -122,7 +122,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 
             <br>
             <?php if ($_smarty_tpl->tpl_vars['allAds']->value[$_smarty_tpl->tpl_vars['i']->value]->isOwner == true) {?>
-            <a href="#">
+            <a href="/eceshub/jobads/deletead/<?php echo $_smarty_tpl->tpl_vars['allAds']->value[$_smarty_tpl->tpl_vars['i']->value]->id;?>
+">
                 <div class="delete-ad">حذف</div>
             </a>
             <?php }?>
@@ -156,7 +157,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 
             <br>
             <?php if ($_smarty_tpl->tpl_vars['allAds']->value[$_smarty_tpl->tpl_vars['i']->value]->isOwner == true) {?>
-            <a href="#">
+            <a href="/eceshub/jobads/deletead/<?php echo $_smarty_tpl->tpl_vars['allAds']->value[$_smarty_tpl->tpl_vars['i']->value]->id;?>
+">
                 <div class="delete-ad">حذف</div>
             </a>
             <?php }?>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 03:19:58
+/* Smarty version 3.1.31, created on 2017-08-06 05:48:23
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\admin\views\components\admin_menu.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59859bce2148c0_15929219',
+  'unifunc' => 'content_59871017b54be4_15942984',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59859bce2148c0_15929219 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59871017b54be4_15942984 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 ?>
 <ul class="<?php if ($_smarty_tpl->tpl_vars['subMenuClass']->value) {

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 01:07:05
+/* Smarty version 3.1.31, created on 2017-08-06 05:48:12
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\console_button.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59857ca9ae5454_81532165',
+  'unifunc' => 'content_5987100cb67a67_08214757',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59857ca9ae5454_81532165 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5987100cb67a67_08214757 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <a href="<?php echo $_smarty_tpl->tpl_vars['href']->value;?>
 " class="ow_console_item_link" onclick="<?php echo $_smarty_tpl->tpl_vars['onClick']->value;?>

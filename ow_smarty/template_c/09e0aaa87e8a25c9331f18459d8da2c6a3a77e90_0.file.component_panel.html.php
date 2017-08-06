@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-05 03:51:42
+/* Smarty version 3.1.31, created on 2017-08-06 05:48:12
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\controllers\component_panel.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5985a33ecfd848_73849807',
+  'unifunc' => 'content_5987100c2ef549_23937178',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5985a33ecfd848_73849807 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5987100c2ef549_23937178 (Smarty_Internal_Template $_smarty_tpl) {
 if (!empty($_smarty_tpl->tpl_vars['permissionMessage']->value)) {?>
     <div class="ow_anno ow_center">
         <?php echo $_smarty_tpl->tpl_vars['permissionMessage']->value;?>

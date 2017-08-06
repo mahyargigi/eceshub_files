@@ -71,7 +71,7 @@
             {/foreach}
             <br>
             {if $allAds[$i]->isOwner == true}
-            <a href="#">
+            <a href="/eceshub/jobads/deletead/{$allAds[$i]->id}">
                 <div class="delete-ad">حذف</div>
             </a>
             {/if}
@@ -93,7 +93,7 @@
             {/foreach}
             <br>
             {if $allAds[$i]->isOwner == true}
-            <a href="#">
+            <a href="/eceshub/jobads/deletead/{$allAds[$i]->id}">
                 <div class="delete-ad">حذف</div>
             </a>
             {/if}

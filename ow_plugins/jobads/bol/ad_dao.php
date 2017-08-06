@@ -34,6 +34,7 @@ class JOBADS_BOL_AdDao extends OW_BaseDao{
 
         $pluginfilesDir = OW::getPluginManager()->getPlugin('jobads')->getUserFilesDir();
         $tmpImgPath = $pluginfilesDir.uniqid().'.jpg';
+//                            $tmpPhotoService->addTemporaryPhoto($file['tmp_name'], $userId, 1);
 //        $tmpImage = new UTIL_Image($image);
 //        $tmpImage->saveImage($tmpImgPath);
         $advertise->image = $tmpImgPath;
@@ -48,6 +49,7 @@ class JOBADS_BOL_AdDao extends OW_BaseDao{
     }
     public function getAllAds(){
         return $this->findAll();
+
     }
     public function getAdByUserId($userId){
         $allAds = $this->getAllAds();
@@ -62,5 +64,7 @@ class JOBADS_BOL_AdDao extends OW_BaseDao{
     public function getAd($id){
         return $this->findById($id);
     }
-
+    public function deleteAd($id){
+        $this->deleteById($id);
+    }
 }
