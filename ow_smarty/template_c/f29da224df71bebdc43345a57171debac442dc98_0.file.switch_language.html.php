@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-06 05:42:49
+/* Smarty version 3.1.31, created on 2017-08-07 11:28:21
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\switch_language.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59870ec9a7eff3_12746188',
+  'unifunc' => 'content_5988b145e6c3f6_13229173',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59870ec9a7eff3_12746188 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5988b145e6c3f6_13229173 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <ul class="ow_console_lang">
     <?php

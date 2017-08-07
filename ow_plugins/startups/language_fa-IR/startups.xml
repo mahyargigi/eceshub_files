@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prefix name="startups" label="startups" language_tag="fa-IR" language_label="فارسی">
+
+    <key name="main_menu_item">
+        <value>استارتاپ ها</value>
+    </key>
+    <key name="index_page_title">
+        <value>استارتاپ ها</value>
+    </key>
+    <key name="index_page_heading">
+        <value>استارتاپ ها</value>
+    </key>
+    <key name="menu_newstartup">
+        <value>افزودن استارتاپ جدید</value>
+    </key>
+    <key name="menu_latest">
+        <value>جدیدترین استارتاپ ها</value>
+    </key>
+    <key name="menu_yourstartups">
+        <value>استارتاپ های شما</value>
+    </key>
+    <key name="new_startup_title">
+        <value>افزودن استارتاپ جدید</value>
+    </key>
+    <key name="new_startup_heading">
+        <value>افزودن استارتاپ جدید</value>
+    </key>
+    <key name="startup_title">
+        <value>عنوان</value>
+    </key>
+    <key name="startup_shortDesc">
+        <value>توصیف یک خطی استارتاپ</value>
+    </key>
+    <key name="startup_image">
+        <value>تصویر لوگو</value>
+    </key>
+    <key name="startup_LongDesc">
+        <value>توضیح استارتاپ</value>
+    </key>
+    <key name="startup_Website">
+        <value>وب سایت</value>
+    </key>
+    <key name="startup_Address">
+        <value>آدرس</value>
+    </key>
+    <key name="startup_TelephoneNumber">
+        <value>شماره تلفن</value>
+    </key>
+    <key name="form_label_submit">
+        <value>ارسال</value>
+    </key>
+</prefix>
