@@ -9,7 +9,7 @@ class STARTUPS_BOL_Startup extends STARTUPS_BOL_Content {
     public $telephoneNumber;
     public $creator;
 //    public $collaborators;
-    public $likes;
+//    public $likes;
 
 
     /**

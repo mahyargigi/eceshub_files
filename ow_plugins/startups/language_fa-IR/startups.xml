@@ -49,4 +49,14 @@
     <key name="form_label_submit">
         <value>ارسال</value>
     </key>
+    <key name="menu_description">
+        <value>معرفی</value>
+    </key>
+    <key name="menu_jobads">
+        <value>آگهی استخدام</value>
+    </key>
+    <key name="menu_news">
+        <value>اخبار استارتاپ</value>
+    </key>
+
 </prefix>

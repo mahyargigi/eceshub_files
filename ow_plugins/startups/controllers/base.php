@@ -109,9 +109,68 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
         }
     }
     public function showStartup($params){
+//        exit((string) OW::getUser()->getId());
         $startupId = $params['startupId'];
         $startup = STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId);
+        $userId = OW::getUser()->getId();
+        $isLoggedIn = true;
+        if($userId == 0){
+            $isLoggedIn = false;
+        }
+        $this->assign('isLoggedIn' , $isLoggedIn);
+        $isLiked = false;
+        if(STARTUPS_BOL_LikeDao::getInstance()->isLiked($userId , $startupId)){
+            $isLiked = true;
+        }
+//        exit(OW::getPluginManager()->getPlugin("startups")->getStaticJsUrl() . 'showstartup.js');
+        OW::getDocument()->addScript(OW::getPluginManager()->getPlugin("startups")->getStaticJsUrl() . 'showstartup.js');
+        $this->assign('isLiked', $isLiked);
+        $this->setPageHeading($startup->title);
+        $this->setPageTitle($startup->title);
         $this->assign('startup' , $startup);
+        $tmpmenu = $this->getStartupMenu($startupId);
+        $tmpmenu->getElement('description')->setActive(true);
+
+        $this->addComponent('menu', $tmpmenu);
+
+//        $cmntParams = new BASE_CommentsParams('startups', 'startups');
+//        $cmntParams->setEntityId($startupId);
+//        $cmntParams->setOwnerId(1);
+//        $this->addComponent('comments', new BASE_CMP_Comments($cmntParams));
+
+    }
+    private function getStartupMenu($id){
+        $validLists = array('description', 'jobads', 'news');
+        $classes = array('ow_ic_push_pin', 'ow_ic_clock', 'ow_ic_user');
+        $language = OW::getLanguage();
+        $menuItems = array();
+        $order = 0;
+        foreach ($validLists as $type){
+            $item = new BASE_MenuItem();
+            $item->setLabel($language->text('startups', 'menu_' . $type));
+            if($type == 'description'){
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup' ), array ("startupId"=>$id));
+            }
+            else if($type == 'jobads'){
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup') , array ("startupId"=>$id));
+            }
+            else if($type == 'news'){
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup') , array ("startupId"=>$id));
+            }
+            else{
+                exit($type);
+            }
+
+            $item->setKey($type);
+            $item->setIconClass($classes[$order]);
+            $item->setOrder($order);
+
+            array_push($menuItems, $item);
+
+            $order++;
+        }
+        $menu = new BASE_CMP_ContentMenu($menuItems);
+        return $menu;
     }
     private function getMenu(){
         $validLists = array('newstartup', 'latest', 'yourstartups');

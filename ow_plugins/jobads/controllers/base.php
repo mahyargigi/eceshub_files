@@ -161,7 +161,7 @@ class JOBADS_CTRL_Base extends OW_ActionController{
                     $photoFile = $_FILES['photo'];
 //                    exit("jerrrrrr");
 //                    $tmpPhotoId = PHOTO_BOL_PhotoTemporaryService::getInstance()->addTemporaryPhoto($photoFile);
-                    exit("jeree");
+//                    exit("jeree");
 //                    exit((string)$tmpPhotoId);
 
                     $values = $form->getValues();

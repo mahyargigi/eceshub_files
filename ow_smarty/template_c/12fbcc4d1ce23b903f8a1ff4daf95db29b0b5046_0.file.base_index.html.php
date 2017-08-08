@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-07 11:28:21
+/* Smarty version 3.1.31, created on 2017-08-08 08:46:08
   from "C:\xampp\htdocs\eceshub\ow_plugins\startups\views\controllers\base_index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5988b145bad1b7_89329708',
+  'unifunc' => 'content_5989dcc031a901_80914765',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '12fbcc4d1ce23b903f8a1ff4daf95db29b0b5046' => 
     array (
       0 => 'C:\\xampp\\htdocs\\eceshub\\ow_plugins\\startups\\views\\controllers\\base_index.html',
-      1 => 1502130494,
+      1 => 1502176356,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5988b145bad1b7_89329708 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5989dcc031a901_80914765 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_block_style')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\block.style.php';
 $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('style', array());
 $_block_repeat=true;
@@ -96,7 +96,8 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value < $_smarty_tpl->tpl_vars['cou
                 <div class="delete-startup">حذف</div>
             </a>
             <?php }?>
-            <a href="#">
+            <a href="http://localhost/eceshub/startups/startup/<?php echo $_smarty_tpl->tpl_vars['allStartups']->value[$_smarty_tpl->tpl_vars['i']->value]->id;?>
+">
                 <div class="more-info">اطلاعات بیشتر</div>
             </a>
         </div>

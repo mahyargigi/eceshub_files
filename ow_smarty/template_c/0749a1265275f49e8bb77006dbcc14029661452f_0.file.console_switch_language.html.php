@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-07 11:28:22
+/* Smarty version 3.1.31, created on 2017-08-08 08:31:00
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\console_switch_language.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5988b14670f415_20025816',
+  'unifunc' => 'content_5989d934981527_65251244',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5988b14670f415_20025816 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5989d934981527_65251244 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="ow_console_lang_item">
     <span class="<?php echo $_smarty_tpl->tpl_vars['class']->value;?>
