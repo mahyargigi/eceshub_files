@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function () {
-    $(document).on('change', 'select', function () {
+    $(document).on('change', 'select#select_skills', function () {
         $('.needed_skills').append(
             '<span class="tag"><span>' + $(this).val() + '</span><a title="حذف" href="#"></a></span>'
         );

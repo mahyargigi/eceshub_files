@@ -1,6 +1,7 @@
 <?php
 class STARTUPS_BOL_StartupDao extends OW_BaseDao{
     private static $classInstance;
+    const CREATOR = 'creator';
     protected function __construct()
     {
         parent::__construct();
@@ -49,5 +50,10 @@ class STARTUPS_BOL_StartupDao extends OW_BaseDao{
 
         STARTUPS_BOL_StartupDao::getInstance()->save($startup);
 //        return $startup;
+    }
+    public function getUserStartups($userId){
+        $example = new OW_Example();
+        $example->andFieldEqual(self::CREATOR , $userId);
+        return($this->findListByExample($example));
     }
 }

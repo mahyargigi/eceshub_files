@@ -128,15 +128,55 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
         $this->setPageHeading($startup->title);
         $this->setPageTitle($startup->title);
         $this->assign('startup' , $startup);
+        $this->assign('startupId' , $startupId);
         $tmpmenu = $this->getStartupMenu($startupId);
         $tmpmenu->getElement('description')->setActive(true);
 
         $this->addComponent('menu', $tmpmenu);
+        if(OW::getUser()->isAuthenticated()){
+            OW::getDocument()->addOnloadScript("
+                $('.is-not-liked').live('click' , function (e){
+                    $.ajax({
+                        type: 'POST',
+                        url: '/eceshub/startups/addlike/" . json_encode($userId) ."/" . (string) ($startupId) . "',
+                        dataType: 'json' ,
+                        success:function(data){
+                            console.log(data);
+                        }
+                    });
+                });
+            ");
+            OW::getDocument()->addOnloadScript("
+                $('.is-liked').live('click' , function(e){
+                    $.ajax({
+                        type: 'POST',
+                        url: '/eceshub/startups/deletelike/" . json_encode($userId) ."/" . (string) ($startupId) . "',
+                        dataType: 'json' ,
+                        success:function(data){
+                            console.log(data);
+                        }
+                    });
+                });
+            ");
+        }
 
 //        $cmntParams = new BASE_CommentsParams('startups', 'startups');
 //        $cmntParams->setEntityId($startupId);
 //        $cmntParams->setOwnerId(1);
 //        $this->addComponent('comments', new BASE_CMP_Comments($cmntParams));
+
+    }
+    public function addLike($params){
+        if(STARTUPS_BOL_LikeDao::getInstance()->isLiked($params['userId'] , $params['startupId']) == false){
+            STARTUPS_BOL_LikeDao::getInstance()->newLike($params['userId'] , $params['startupId']);
+            exit(json_encode("Liked!"));
+        }
+    }
+    public function unLike($params){
+        if(STARTUPS_BOL_LikeDao::getInstance()->isLiked($params['userId'] , $params['startupId']) == true){
+            $test = STARTUPS_BOL_LikeDao::getInstance()->disLike($params['userId'] , $params['startupId']);
+            exit(json_encode("UnLiked!"));
+        }
 
     }
     private function getStartupMenu($id){

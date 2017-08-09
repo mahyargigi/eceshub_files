@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-08 08:31:00
+/* Smarty version 3.1.31, created on 2017-08-09 13:08:05
   from "C:\xampp\htdocs\eceshub\ow_plugins\mailbox\views\components\new_message.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5989d934488ac2_92043247',
+  'unifunc' => 'content_598b6ba5771185_57304653',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5989d934488ac2_92043247 (Smarty_Internal_Template $_smarty_tpl) {
+function content_598b6ba5771185_57304653 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_block_form')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\block.form.php';
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 if (!is_callable('smarty_function_input')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.input.php';

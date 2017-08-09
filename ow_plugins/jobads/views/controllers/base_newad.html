@@ -8,6 +8,12 @@
         <td class="ow_label">{label name='description'}</td>
         <td class="ow_value">{input name='description'}</td>
     </tr>
+    {if $hasStartup == true}
+        <tr class="ow_alt2">
+            <td class="ow_label">{label name='startup'}</td>
+            <td class="ow_value">{input name='startup'}</td>
+        </tr>
+    {/if}
     <tr class="ow_alt1">
         <td class="ow_label">{label name='skills'}</td>
         <td class="ow_value">{input name='skills'}

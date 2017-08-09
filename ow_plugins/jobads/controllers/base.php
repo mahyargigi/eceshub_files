@@ -110,6 +110,8 @@ class JOBADS_CTRL_Base extends OW_ActionController{
     {
         if (OW::getUser()->isAuthenticated()){
             $userId = OW::getUser()->getId();
+            $startupObjects = STARTUPS_BOL_StartupDao::getInstance()->getUserStartups($userId);
+            $hasStartup = false;
 //enctype
             $this->setPageTitle(OW::getLanguage()->text('jobads', 'add_ad_title'));
             $this->setPageHeading(OW::getLanguage()->text('jobads', 'add_ad_heading'));
@@ -125,11 +127,24 @@ class JOBADS_CTRL_Base extends OW_ActionController{
             $dsc->setLabel(OW::getLanguage()->text('jobads', 'ad_description'));
             $dsc->setRequired();
             $form->addElement($dsc);
+            if($startupObjects != null){
+                $startup = new Selectbox("startup");
+                $startup->setLabel('استارتاپ');
+//                exit(json_encode($startupObjects));
+                foreach ($startupObjects as $sobject){
+                    $startup->addOption($sobject->title , $sobject->title);
+                }
+                $form->addElement($startup);
+                $hasStartup = true;
+            }
+            $this->assign('hasStartup' , $hasStartup);
+
     //
             $allSkills = ADDSKILLS_BOL_SkillsDao::getInstance()->getAllSkills();
     //
             $skills = new Selectbox("skills");
             $skills->setLabel(OW::getLanguage()->text('jobads', 'ad_skills'));
+            $skills->setId("select_skills");
             foreach ($allSkills as $skill) {
                 $skills->addOption($skill->name, $skill->name);
             }

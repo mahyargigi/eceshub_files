@@ -2,6 +2,10 @@
 class STARTUPS_BOL_LikeDao extends OW_BaseDao{
 
     private static $classInstance;
+
+    const USER_ID = 'userid';
+    const STARTUP_ID = 'startupid';
+
     protected function __construct()
     {
         parent::__construct();
@@ -28,19 +32,36 @@ class STARTUPS_BOL_LikeDao extends OW_BaseDao{
         return $this->findAll();
     }
     public function isLiked($userId , $startupId){
-        $likedByUser = array();
-        $answer = false;
-        foreach ($this->getAllLikes() as $like){
-            if($like->userid == $userId){
-                array_push($likedByUser,$like);
-            }
+        $example = new OW_Example();
+        $example->andFieldEqual(self::USER_ID , $userId);
+        $example->andFieldEqual(self::STARTUP_ID , $startupId);
+        $answer = $this->findListByExample($example);
+
+        if(empty($answer)){
+            return false;
         }
-        foreach ($likedByUser as $like){
-            if($like->startupid == $startupId){
-                $likedByUser = true;
-                break;
-            }
+        else{
+            return true;
         }
-        return $likedByUser;
+    }
+    public function newLike($userId , $startupId){
+        if($this->isLiked($userId , $startupId) == false){
+            $like = new STARTUPS_BOL_Like();
+            $like->userid = $userId;
+            $like->startupid = $startupId;
+
+            STARTUPS_BOL_LikeDao::getInstance()->save($like);
+        }
+    }
+
+    public function disLike($userId , $startupId){
+        if($this->isLiked($userId , $startupId) == true){
+            $example = new OW_Example();
+            $example->andFieldEqual(self::USER_ID , $userId);
+            $example->andFieldEqual(self::STARTUP_ID , $startupId);
+
+//            return $this->findIdByExample($example);
+            $this->deleteById($this->findIdByExample($example));
+        }
     }
 }
