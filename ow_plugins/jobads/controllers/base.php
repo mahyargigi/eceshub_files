@@ -132,7 +132,7 @@ class JOBADS_CTRL_Base extends OW_ActionController{
                 $startup->setLabel('استارتاپ');
 //                exit(json_encode($startupObjects));
                 foreach ($startupObjects as $sobject){
-                    $startup->addOption($sobject->title , $sobject->title);
+                    $startup->addOption($sobject->id , $sobject->title);
                 }
                 $form->addElement($startup);
                 $hasStartup = true;
@@ -169,22 +169,17 @@ class JOBADS_CTRL_Base extends OW_ActionController{
             $this->addForm($form);
             if (OW::getRequest()->isPost()) {
                 if ($form->isValid($_POST)) {
-//                    exit("helloooo");
-//                    echo print_r($_FILES);
-//                    $tmpPhotoService = PHOTO_BOL_PhotoTemporaryService::getInstance();
-
                     $photoFile = $_FILES['photo'];
-//                    exit("jerrrrrr");
-//                    $tmpPhotoId = PHOTO_BOL_PhotoTemporaryService::getInstance()->addTemporaryPhoto($photoFile);
-//                    exit("jeree");
-//                    exit((string)$tmpPhotoId);
-
                     $values = $form->getValues();
                     $image_element = $form->getElement('image');
                     $chosen_skills = explode(',', $values['chosen_skills']);
                     $chosen_skills = json_encode($chosen_skills);
-//                    exit(gettype($image_element));
-                    JOBADS_BOL_AdDao::getInstance()->addAd($image_element , $values['description'] , $chosen_skills , $values['email'] , $userId);
+                    $ad = JOBADS_BOL_AdDao::getInstance()->addAd($image_element , $values['description'] , $chosen_skills , $values['email'] , $userId);
+                    if($hasStartup == true){
+                        if(! $values['startup'] == null){
+                            STARTUPS_BOL_AdDao::getInstance()->addAd($values['startup'] , $userId , $ad->id);
+                        }
+                    }
                     $this->redirect('jobads');
                 }
             }
@@ -199,6 +194,10 @@ class JOBADS_CTRL_Base extends OW_ActionController{
             $userId = OW::getUser()->getId();
             if($ad->userid == $userId){
                 JOBADS_BOL_AdDao::getInstance()->deleteAd($params['adId']);
+                if(STARTUPS_BOL_AdDao::getInstance()->existStartup($ad->id)){
+//                    $startupId = STARTUPS_BOL_AdDao::getInstance()->getStartupId($ad->id);
+                    STARTUPS_BOL_AdDao::getInstance()->deleteAdsAd($ad->id);
+                }
                 $this->redirect('jobads');
             }
         }
@@ -207,6 +206,17 @@ class JOBADS_CTRL_Base extends OW_ActionController{
     public function showad($params){
         $this->setPageTitle("آگهی مشاغل");
         $ad = JOBADS_BOL_AdDao::getInstance()->getAd($params['adId']);
+        $existStartup = false;
+        if (STARTUPS_BOL_AdDao::getInstance()->existStartup($ad->id)){
+            $existStartup = true;
+        }
+        if($existStartup == true){
+            $startupId = STARTUPS_BOL_AdDao::getInstance()->getStartupId($ad->id);
+            $startup = STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId);
+//            exit(json_encode($startupId));
+            $this->assign('startup' , $startup);
+            $this->assign('startupId' , $startupId);
+        }
 //        exit($ad->description);
         $infoArray = array();
         if($ad == NULL){
@@ -221,5 +231,7 @@ class JOBADS_CTRL_Base extends OW_ActionController{
             );
         }
         $this->assign('info' , $infoArray);
+        $this->assign('existStartup' , $existStartup);
+
     }
 }

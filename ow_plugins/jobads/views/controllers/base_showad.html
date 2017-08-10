@@ -17,6 +17,13 @@ border-radius: 5px;
     <h2>توضیحات:</h2>
     <h4 style="color: #9d9d9d">{$info.description}</h4>
     <br>
+    {if $existStartup == true}
+        <h2>استارتاپ</h2>
+        <a href="/eceshub/startups/startup/{$startupId}">
+            <h4 style="color: #9d9d9d">{$startup->title}</h4>
+        </a>
+        <br>
+    {/if}
     <h2>ایمیل:</h2>
     <h4 style="color: #9d9d9d">{$info.email}</h4>
     <h2>توانایی های مورد نیاز:</h2>

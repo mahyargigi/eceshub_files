@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-09 13:08:05
+/* Smarty version 3.1.31, created on 2017-08-10 07:10:52
   from "C:\xampp\htdocs\eceshub\ow_plugins\mailbox\views\components\console_list.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_598b6ba5d222c6_01157642',
+  'unifunc' => 'content_598c696c4c1ef0_03301488',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_598b6ba5d222c6_01157642 (Smarty_Internal_Template $_smarty_tpl) {
+function content_598c696c4c1ef0_03301488 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_text')) require_once 'C:\\xampp\\htdocs\\eceshub\\ow_smarty\\plugin\\function.text.php';
 ?>
 <div class="ow_console_list_wrapper OW_ConsoleListContainer">

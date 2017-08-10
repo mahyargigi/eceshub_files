@@ -29,3 +29,17 @@ $sql2 = "CREATE TABLE `" . OW_DB_PREFIX . "startups_like` (
 ENGINE=MyISAM CHARSET=utf8
 ROW_FORMAT=DEFAULT";
 OW::getDbo()->query($sql2);
+
+$sql3= "CREATE TABLE `" . OW_DB_PREFIX . "startups_ad`(
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `userId`  int(11) NOT NULL,
+    `startupId`  int(11) NOT NULL,
+    `adId`  int(11) NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `userId` (`userId`),
+    KEY `startupId` (`startupId`),
+    KEY `adId` (`adId`)
+)
+ENGINE=MyISAM CHARSET=utf8
+ROW_FORMAT=DEFAULT";
+OW::getDbo()->query($sql3);

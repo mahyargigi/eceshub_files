@@ -160,11 +160,21 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
             ");
         }
 
-//        $cmntParams = new BASE_CommentsParams('startups', 'startups');
-//        $cmntParams->setEntityId($startupId);
-//        $cmntParams->setOwnerId(1);
-//        $this->addComponent('comments', new BASE_CMP_Comments($cmntParams));
-
+    }
+    public function startupAds($params){
+        $this->showStartup($params);
+        $startupId = $params['startupId'];
+        $adIds = STARTUPS_BOL_AdDao::getInstance()->getStartupAdIds($startupId);
+//        exit(json_encode($adIds));
+        $ads = array();
+        foreach ($adIds as $adId){
+            array_push($ads , JOBADS_BOL_AdDao::getInstance()->getAd($adId));
+        }
+        foreach ($ads as $ad){
+            $ad->skills = json_decode($ad->skills);
+        }
+        $this->assign('adscount' ,count($ads) );
+        $this->assign('ads' , $ads);
     }
     public function addLike($params){
         if(STARTUPS_BOL_LikeDao::getInstance()->isLiked($params['userId'] , $params['startupId']) == false){
@@ -189,13 +199,13 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
             $item = new BASE_MenuItem();
             $item->setLabel($language->text('startups', 'menu_' . $type));
             if($type == 'description'){
-                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup' ), array ("startupId"=>$id));
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup' , array('startupId'=>$id) ));
             }
             else if($type == 'jobads'){
-                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup') , array ("startupId"=>$id));
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_startupads' , array ("startupId"=>$id)));
             }
             else if($type == 'news'){
-                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup') , array ("startupId"=>$id));
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup' , array ("startupId"=>$id)) );
             }
             else{
                 exit($type);
