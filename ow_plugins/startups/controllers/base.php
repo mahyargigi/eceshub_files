@@ -15,11 +15,8 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
         $this->setPageTitle(OW::getLanguage()->text('startups', 'index_page_title'));
         $this->setPageHeading(OW::getLanguage()->text('startups', 'index_page_heading'));
         $tmpmenu = $this->getMenu();
-//        $tmpmenu->getElement('yourstartups')->setActive(true);
-//        exit(gettype($tmpmenu));
+        $tmpmenu->getElement('latest')->setActive(true);
         $this->addComponent('menu', $tmpmenu);
-//        STARTUPS_BOL_StartupDao::getInstance()->test();
-//        exit("yooriii");
         $allStartups = STARTUPS_BOL_StartupDao::getInstance()->getAllStartups();
         $count = count($allStartups);
         foreach ($allStartups as $startup ){
@@ -33,16 +30,26 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
         $this->assign('count' , $count);
 //        exit("everything is alright!");
     }
+    public function yourStartups(){
+        if(OW::getUser()->isAuthenticated()){
+            $userId = OW::getUser()->getId();
+            $this->setPageTitle('استارتاپ های شما');
+            $this->setPageHeading('استارتاپ های شما');
+            $tmpmenu = $this->getMenu();
+            $tmpmenu->getElement('yourstartups')->setActive(true);
+            $this->addComponent('menu' , $tmpmenu);
+            $yourStartups = STARTUPS_BOL_StartupDao::getInstance()->getUserStartups($userId);
+            $count = count($yourStartups);
+            foreach ($yourStartups as $yourStartup){
+                $yourStartup->isOwner = true;
+            }
+            $this->assign('allStartups' , $yourStartups);
+            $this->assign('count' , $count);
+        }
+
+
+    }
     public function newStartup(){
-//        $testarr = array();
-//        array_push($testarr , 'hi');
-//        array_push($testarr , 'bye');
-//        array_push($testarr , 'zoooo');
-//        if (in_array('hi', $testarr))
-//        {
-//            unset($testarr[array_search('strawberry',$testarr)]);
-//        }
-//        exit(json_encode($testarr));
 
         if (OW::getUser()->isAuthenticated()){
             $userId = OW::getUser()->getId();
@@ -108,37 +115,50 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
 
         }
     }
-    public function showStartup($params){
-//        exit((string) OW::getUser()->getId());
-        $startupId = $params['startupId'];
-        $startup = STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId);
-        $userId = OW::getUser()->getId();
-        $isLoggedIn = true;
-        if($userId == 0){
-            $isLoggedIn = false;
-        }
-        $this->assign('isLoggedIn' , $isLoggedIn);
-        $isLiked = false;
-        if(STARTUPS_BOL_LikeDao::getInstance()->isLiked($userId , $startupId)){
-            $isLiked = true;
-        }
-//        exit(OW::getPluginManager()->getPlugin("startups")->getStaticJsUrl() . 'showstartup.js');
-        OW::getDocument()->addScript(OW::getPluginManager()->getPlugin("startups")->getStaticJsUrl() . 'showstartup.js');
-        $this->assign('isLiked', $isLiked);
-        $this->setPageHeading($startup->title);
-        $this->setPageTitle($startup->title);
-        $this->assign('startup' , $startup);
-        $this->assign('startupId' , $startupId);
-        $tmpmenu = $this->getStartupMenu($startupId);
-        $tmpmenu->getElement('description')->setActive(true);
-
-        $this->addComponent('menu', $tmpmenu);
+    public function deleteStartup($params){
         if(OW::getUser()->isAuthenticated()){
-            OW::getDocument()->addOnloadScript("
+            $userId = OW::getUser()->getId();
+            $startupId = $params['startupId'];
+            if(STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId)->creator == $userId){
+                STARTUPS_BOL_StartupDao::getInstance()->deleteStartup($startupId);
+                $this->redirect('startups');
+            }
+        }
+    }
+    public function showStartup($params){
+        if(STARTUPS_BOL_StartupDao::getInstance()->getStartup($params['startupId']) == null){
+            throw new Redirect404Exception();
+        }
+        else {
+            $startupId = $params['startupId'];
+            $startup = STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId);
+            $userId = OW::getUser()->getId();
+            $isLoggedIn = true;
+            if ($userId == 0) {
+                $isLoggedIn = false;
+            }
+            $this->assign('isLoggedIn', $isLoggedIn);
+            $isLiked = false;
+            if (STARTUPS_BOL_LikeDao::getInstance()->isLiked($userId, $startupId)) {
+                $isLiked = true;
+            }
+//        exit(OW::getPluginManager()->getPlugin("startups")->getStaticJsUrl() . 'showstartup.js');
+            OW::getDocument()->addScript(OW::getPluginManager()->getPlugin("startups")->getStaticJsUrl() . 'showstartup.js');
+            $this->assign('isLiked', $isLiked);
+            $this->setPageHeading($startup->title);
+            $this->setPageTitle($startup->title);
+            $this->assign('startup', $startup);
+            $this->assign('startupId', $startupId);
+            $tmpmenu = $this->getStartupMenu($startupId);
+//        $tmpmenu->getElement('description')->setActive(true);
+
+            $this->addComponent('menu', $tmpmenu);
+            if (OW::getUser()->isAuthenticated()) {
+                OW::getDocument()->addOnloadScript("
                 $('.is-not-liked').live('click' , function (e){
                     $.ajax({
                         type: 'POST',
-                        url: '/eceshub/startups/addlike/" . json_encode($userId) ."/" . (string) ($startupId) . "',
+                        url: '/eceshub/startups/addlike/" . json_encode($userId) . "/" . (string)($startupId) . "',
                         dataType: 'json' ,
                         success:function(data){
                             console.log(data);
@@ -146,11 +166,11 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
                     });
                 });
             ");
-            OW::getDocument()->addOnloadScript("
+                OW::getDocument()->addOnloadScript("
                 $('.is-liked').live('click' , function(e){
                     $.ajax({
                         type: 'POST',
-                        url: '/eceshub/startups/deletelike/" . json_encode($userId) ."/" . (string) ($startupId) . "',
+                        url: '/eceshub/startups/deletelike/" . json_encode($userId) . "/" . (string)($startupId) . "',
                         dataType: 'json' ,
                         success:function(data){
                             console.log(data);
@@ -158,8 +178,8 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
                     });
                 });
             ");
+            }
         }
-
     }
     public function startupAds($params){
         $this->showStartup($params);
@@ -175,6 +195,57 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
         }
         $this->assign('adscount' ,count($ads) );
         $this->assign('ads' , $ads);
+    }
+    public function startupNews($params){
+        $this->showStartup($params);
+        $startupId = $params['startupId'];
+        $startup = STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId);
+        $this->assign('startup' , $startup);
+        $news = STARTUPS_BOL_NewsDao::getInstance()->getStartupNews($startupId);
+        $newsCount = count($news);
+        $this->assign('newsCount' , $newsCount);
+        $this->assign('news' , $news);
+    }
+    public function addStartupNews($params){
+        if (OW::getUser()->isAuthenticated()){
+            $userId = OW::getUser()->getId();
+            $creator = STARTUPS_BOL_StartupDao::getInstance()->getStartup($params['startupId'])->creator;
+            if($creator = $userId){
+                $this->setPageTitle('افزودن خبر');
+                $this->setPageHeading('افزودن خبر');
+                $form = new Form('startup_news');
+
+                $title = new TextField('title');
+                $title->setLabel('عنوان');
+                $title->setRequired();
+                $form->addElement($title);
+
+                $description = new WysiwygTextarea('description');
+                $description->setLabel('توضیحات');
+                $description->setRequired();
+                $form->addElement($description);
+
+                $image = new FileField('image');
+                $image->setLabel('تصویر');
+                $form->addElement($image);
+
+                $submit = new Submit('send');
+                $submit->setValue('ارسال');
+                $form->addElement($submit);
+                $this->addForm($form);
+            }
+            else{
+                $this->redirect('startups');
+            }
+            if(OW::getRequest()->isPost()){
+                if ($form->isValid($_POST)){
+                    $values = $form->getValues();
+                    STARTUPS_BOL_NewsDao::getInstance()->saveNews($values['title'] , $values['description'] , $values['image'] , $params['startupId']);
+                }
+            }
+
+
+        }
     }
     public function addLike($params){
         if(STARTUPS_BOL_LikeDao::getInstance()->isLiked($params['userId'] , $params['startupId']) == false){
@@ -205,7 +276,7 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
                 $item->setUrl(OW::getRouter()->urlForRoute('startups_startupads' , array ("startupId"=>$id)));
             }
             else if($type == 'news'){
-                $item->setUrl(OW::getRouter()->urlForRoute('startups_showstartup' , array ("startupId"=>$id)) );
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_startupnews' , array ("startupId"=>$id)) );
             }
             else{
                 exit($type);
@@ -244,7 +315,7 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
                 $item->setUrl(OW::getRouter()->urlForRoute('startups'));
             }
             else if($type == 'yourstartups'){
-                $item->setUrl(OW::getRouter()->urlForRoute('startups'));
+                $item->setUrl(OW::getRouter()->urlForRoute('startups_yourstartups'));
             }
             else{
                 exit($type);

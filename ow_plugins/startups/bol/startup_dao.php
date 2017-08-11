@@ -56,4 +56,13 @@ class STARTUPS_BOL_StartupDao extends OW_BaseDao{
         $example->andFieldEqual(self::CREATOR , $userId);
         return($this->findListByExample($example));
     }
+    public function deleteStartup($startupId){
+        $this->deleteById($startupId);
+        $adIds = STARTUPS_BOL_AdDao::getInstance()->getStartupAdIds($startupId);
+        STARTUPS_BOL_AdDao::getInstance()->deleteStartupAds($startupId);
+        foreach ($adIds as $adId){
+            JOBADS_BOL_AdDao::getInstance()->deleteAd($adId);
+        }
+        return true;
+    }
 }

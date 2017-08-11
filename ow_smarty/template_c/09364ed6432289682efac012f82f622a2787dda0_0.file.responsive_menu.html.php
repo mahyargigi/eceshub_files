@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-10 07:10:56
+/* Smarty version 3.1.31, created on 2017-08-11 08:45:16
   from "C:\xampp\htdocs\eceshub\ow_system_plugins\base\views\components\responsive_menu.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_598c6970023969_35869586',
+  'unifunc' => 'content_598dd10cb19921_05525744',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_598c6970023969_35869586 (Smarty_Internal_Template $_smarty_tpl) {
+function content_598dd10cb19921_05525744 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="ow_responsive_menu ow_left" id="<?php echo $_smarty_tpl->tpl_vars['uniqId']->value;?>
 ">

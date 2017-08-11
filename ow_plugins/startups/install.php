@@ -43,3 +43,17 @@ $sql3= "CREATE TABLE `" . OW_DB_PREFIX . "startups_ad`(
 ENGINE=MyISAM CHARSET=utf8
 ROW_FORMAT=DEFAULT";
 OW::getDbo()->query($sql3);
+
+$sql4= "CREATE TABLE `" . OW_DB_PREFIX . "startups_news`(
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `startupId`  int(11) NOT NULL,
+    `title` VARCHAR(30) NOT NULL,
+    `image` VARCHAR(255),
+    `description` text NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `userId` (`userId`),
+    KEY `startupId` (`startupId`),
+)
+ENGINE=MyISAM CHARSET=utf8
+ROW_FORMAT=DEFAULT";
+OW::getDbo()->query($sql4);

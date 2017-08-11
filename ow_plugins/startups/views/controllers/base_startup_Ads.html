@@ -90,22 +90,26 @@
     {/if}
 </div>
 <div class="center-div">
-    {for $i=0; $i< $adscount ; $i++}
-        <div class="ad-div">
-            <label>{$ads[$i]->description}</label>
-            <br>
-            <label>توانایی ها:</label>
-            {foreach $ads[$i]->skills as $skill}
-            <div class="skills-div">
-                {$skill}</div>
-            {/foreach}
-            <br>
-            <label>ایمیل:</label>
-            <div class="email-div">{$ads[$i]->email}</div>
-            <br>
-            <a href="http://localhost/eceshub/jobads/ad/{$ads[$i]->id}">
-                <div class="more-info">اطلاعات بیشتر</div>
-            </a>
-        </div>
-    {/for}
+    {if $adscount == 0}
+        <h1>هنوز آگهی استخدامی برای این استارتاپ ثبت نشده است!</h1>
+    {else}
+        {for $i=0; $i< $adscount ; $i++}
+            <div class="ad-div">
+                <label>{$ads[$i]->description}</label>
+                <br>
+                <label>توانایی ها:</label>
+                {foreach $ads[$i]->skills as $skill}
+                <div class="skills-div">
+                    {$skill}</div>
+                {/foreach}
+                <br>
+                <label>ایمیل:</label>
+                <div class="email-div">{$ads[$i]->email}</div>
+                <br>
+                <a href="http://localhost/eceshub/jobads/ad/{$ads[$i]->id}">
+                    <div class="more-info">اطلاعات بیشتر</div>
+                </a>
+            </div>
+        {/for}
+    {/if}
 </div>

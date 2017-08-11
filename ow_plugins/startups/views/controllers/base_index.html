@@ -3,7 +3,7 @@
 display: inline-block;
 width: 30%;
 border: solid;
-border-radius: 5px;
+border-radius: 10px;
 border-color: #899191;
 border-width: 2px;
 }
@@ -39,6 +39,10 @@ padding:2%;
 padding-right: 3%;
 padding=left: 3%;
 }
+.startup-title{
+    color: #7eb6fd;
+    margin-right: 3%;
+}
 {/style}
 {$menu}
 {if $count==0}
@@ -48,11 +52,14 @@ padding=left: 3%;
     {if $i%2==0}
         <div class="startup-div right-startup-div">
             <img src="http://localhost/eceshub/ow_userfiles/plugins/jobads/girls-1000.png" class="startup-image">
+            <label class="startup-title">{$allStartups[$i]->title}</label>
+            <br>
+            <br>
             <label class="right-margin">{$allStartups[$i]->shortDescription}</label>
             <br>
             <br>
             {if $allStartups[$i]->isOwner == true}
-            <a href="#">
+            <a href="startups/startup/deletestartup/{$allStartups[$i]->id}">
                 <div class="delete-startup">حذف</div>
             </a>
             {/if}
@@ -60,7 +67,24 @@ padding=left: 3%;
                 <div class="more-info">اطلاعات بیشتر</div>
             </a>
         </div>
-
+    {else}
+        <div class="startup-div ">
+            <img src="http://localhost/eceshub/ow_userfiles/plugins/jobads/girls-1000.png" class="startup-image">
+            <label class="startup-title">{$allStartups[$i]->title}</label>
+            <br>
+            <br>
+            <label class="right-margin">{$allStartups[$i]->shortDescription}</label>
+            <br>
+            <br>
+            {if $allStartups[$i]->isOwner == true}
+            <a href="startups/startup/deletestartup/{$allStartups[$i]->id}">
+                <div class="delete-startup">حذف</div>
+            </a>
+            {/if}
+            <a href="http://localhost/eceshub/startups/startup/{$allStartups[$i]->id}">
+                <div class="more-info">اطلاعات بیشتر</div>
+            </a>
+        </div>
     {/if}
 
 {/for}
