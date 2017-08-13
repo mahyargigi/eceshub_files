@@ -105,6 +105,7 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
                     $values = $form->getValues();
                     $val = STARTUPS_BOL_StartupDao::getInstance()->newStartup($values['title'] , $values['LongDesc'] ,$values['image'] , $values['shortDesc'] ,
                         $values['website'] , $values['address'] , $values['telephoneNumber'] , $userId  );
+
 //                    exit($val);
 //                    exit(STARTUPS_BOL_StartupDao::getInstance()->test());
                     $this->redirect('startups');
@@ -126,6 +127,7 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
         }
     }
     public function showStartup($params){
+//        exit(json_encode(BOL_UserDao::getInstance()->findById(STARTUPS_BOL_StartupDao::getInstance()->getStartup($params['startupId'])->creator)));
         if(STARTUPS_BOL_StartupDao::getInstance()->getStartup($params['startupId']) == null){
             throw new Redirect404Exception();
         }
@@ -184,6 +186,12 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
     public function startupAds($params){
         $this->showStartup($params);
         $startupId = $params['startupId'];
+        $userId = OW::getUser()->getId();
+        $isOwner = false;
+        if($userId == STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId)->creator){
+            $isOwner = true;
+        }
+        $this->assign('isOwner' ,$isOwner);
         $adIds = STARTUPS_BOL_AdDao::getInstance()->getStartupAdIds($startupId);
 //        exit(json_encode($adIds));
         $ads = array();
@@ -199,6 +207,12 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
     public function startupNews($params){
         $this->showStartup($params);
         $startupId = $params['startupId'];
+        $userId = OW::getUser()->getId();
+        $isOwner = false;
+        if(STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId)->creator == $userId){
+            $isOwner = true;
+        }
+        $this->assign('isOwner' , $isOwner);
         $startup = STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId);
         $this->assign('startup' , $startup);
         $news = STARTUPS_BOL_NewsDao::getInstance()->getStartupNews($startupId);
@@ -206,11 +220,23 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
         $this->assign('newsCount' , $newsCount);
         $this->assign('news' , $news);
     }
+    public function deleteNews($params){
+        $startupId = $params['startupId'];
+        $newsId = $params['newsId'];
+        if(OW::getUser()->isAuthenticated()){
+            $userId = OW::getUser()->getId();
+            if($userId == STARTUPS_BOL_StartupDao::getInstance()->getStartup($startupId)->creator){
+                STARTUPS_BOL_NewsDao::getInstance()->deleteNews($newsId);
+                $this->redirect('startups');
+            }
+        }
+
+    }
     public function addStartupNews($params){
         if (OW::getUser()->isAuthenticated()){
             $userId = OW::getUser()->getId();
             $creator = STARTUPS_BOL_StartupDao::getInstance()->getStartup($params['startupId'])->creator;
-            if($creator = $userId){
+            if($creator == $userId){
                 $this->setPageTitle('افزودن خبر');
                 $this->setPageHeading('افزودن خبر');
                 $form = new Form('startup_news');
@@ -241,10 +267,14 @@ class STARTUPS_CTRL_Base extends OW_ActionController{
                 if ($form->isValid($_POST)){
                     $values = $form->getValues();
                     STARTUPS_BOL_NewsDao::getInstance()->saveNews($values['title'] , $values['description'] , $values['image'] , $params['startupId']);
+                    $this->redirect('startups');
                 }
             }
 
 
+        }
+        else{
+            $this->redirect('startups');
         }
     }
     public function addLike($params){

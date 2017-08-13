@@ -65,6 +65,19 @@
     color: white;
     padding:1%;
 }
+.add-ad{
+    color: #10e89a;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background: white;
+    padding: 3px;
+    width: 80px;
+}
+.add-ad:hover{
+    background-color: #10e89a;
+    color: white;
+}
 {/style}
 {$menu}
 <div class="right-div">
@@ -92,6 +105,14 @@
 <div class="center-div">
     {if $adscount == 0}
         <h1>هنوز آگهی استخدامی برای این استارتاپ ثبت نشده است!</h1>
+    <br>
+        {if $isOwner == true}
+            <a href="http://localhost/eceshub/jobads/newad" style="text-decoration: none;">
+                <div class="add-ad">
+                    +افزودن آگهی
+                </div>
+            </a>
+        {/if}
     {else}
         {for $i=0; $i< $adscount ; $i++}
             <div class="ad-div">

@@ -51,8 +51,7 @@ $sql4= "CREATE TABLE `" . OW_DB_PREFIX . "startups_news`(
     `image` VARCHAR(255),
     `description` text NOT NULL,
     PRIMARY KEY (`id`),
-    KEY `userId` (`userId`),
-    KEY `startupId` (`startupId`),
+    KEY `startupId` (`startupId`)
 )
 ENGINE=MyISAM CHARSET=utf8
 ROW_FORMAT=DEFAULT";

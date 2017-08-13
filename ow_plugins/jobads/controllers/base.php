@@ -204,9 +204,15 @@ class JOBADS_CTRL_Base extends OW_ActionController{
 
     }
     public function showad($params){
+
         $this->setPageTitle("آگهی مشاغل");
         $ad = JOBADS_BOL_AdDao::getInstance()->getAd($params['adId']);
+        if($ad == null){
+            throw new Redirect404Exception();
+        }
         $existStartup = false;
+//        exit(json_encode(JOBADS_BOL_AdDao::getInstance()->findById($params['adId'])));
+//        exit(json_encode(STARTUPS_BOL_AdDao::getInstance()->existStartup($ad->id)));
         if (STARTUPS_BOL_AdDao::getInstance()->existStartup($ad->id)){
             $existStartup = true;
         }

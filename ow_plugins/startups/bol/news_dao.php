@@ -44,4 +44,7 @@ class STARTUPS_BOL_NewsDao extends OW_BaseDao{
         $this->deleteByExample($example);
         return true;
     }
+    public function deleteNews($newsId){
+        $this->deleteById($newsId);
+    }
 }

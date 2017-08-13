@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-08-11 08:45:16
+/* Smarty version 3.1.31, created on 2017-08-12 00:53:19
   from "C:\xampp\htdocs\eceshub\ow_themes\iissocialcity\master_pages\html_document.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_598dd10cce6440_01884406',
+  'unifunc' => 'content_598eb3efe63aa2_82681095',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_598dd10cce6440_01884406 (Smarty_Internal_Template $_smarty_tpl) {
+function content_598eb3efe63aa2_82681095 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="<?php echo $_smarty_tpl->tpl_vars['language']->value;?>

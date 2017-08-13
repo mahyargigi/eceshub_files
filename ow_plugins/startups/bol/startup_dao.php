@@ -60,6 +60,7 @@ class STARTUPS_BOL_StartupDao extends OW_BaseDao{
         $this->deleteById($startupId);
         $adIds = STARTUPS_BOL_AdDao::getInstance()->getStartupAdIds($startupId);
         STARTUPS_BOL_AdDao::getInstance()->deleteStartupAds($startupId);
+        STARTUPS_BOL_NewsDao::getInstance()->deleteStartupNews($startupId);
         foreach ($adIds as $adId){
             JOBADS_BOL_AdDao::getInstance()->deleteAd($adId);
         }

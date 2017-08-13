@@ -27,6 +27,7 @@
     border:solid;
     border-width:1px;
     border-color:#cdcaca;
+    border-radius: 5px;
 }
 .add-news-btn{
     color: #10e89a;
@@ -40,6 +41,38 @@
 .add-news-btn:hover{
     background-color: #10e89a;
     color: white;
+}
+.news-div{
+    border:solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #cdcaca;
+    padding: 2%;
+}
+.news-img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+.news-title{
+    color: #67ace8;
+    font-size: 19px;
+}
+.delete-news{
+    padding:1%;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #e8075f;
+    color: #e8075f;
+    margin-top: -3%;
+    float: left;
+    width: 60px;
+    height: 20px;
+}
+.delete-news:hover{
+    color:white;
+    background-color: #e8075f;
 }
 {/style}
 {$menu}
@@ -66,12 +99,30 @@
     {/if}
 </div>
 <div class=" center-div">
-    <a href="http://localhost/eceshub/startups/startup/{$startup->id}/addnews" style="text-decoration: none;">
-        <div class="add-news-btn">+ افزودن خبر</div>
-    </a>
+    {if $isOwner == true}
+        <a href="http://localhost/eceshub/startups/startup/{$startup->id}/addnews" style="text-decoration: none;">
+            <div class="add-news-btn">+ افزودن خبر</div>
+        </a>
+    {/if}
     <br>
     <br>
-    {for $i=0; $i<$newsCount ; i++}
-        <div class="news-div"></div>
+    {for $i=$newsCount-1; $i> -1 ; $i--}
+        <div class="news-div">
+            <label class="news-title">{$news[$i]->title}</label>
+            <br>
+            <br>
+            {if $news[$i]->image != null}
+            <img src="http://localhost/eceshub/ow_userfiles/plugins/jobads/girls-1000.png" class="news-img">
+            {/if}
+            <br>
+            <h3>{$news[$i]->description}</h3>
+            {if $isOwner == true}
+                <a href="http://localhost/eceshub/startups/startup/{$startup->id}/{$news[$i]->id}/deletenews" style="text-decoration: none;">
+                    <div class="delete-news">حذف آگهی</div>
+                </a>
+            {/if}
+        </div>
+        <br>
+        <br>
     {/for}
 </div>
